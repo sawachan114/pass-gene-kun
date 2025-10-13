@@ -1,10 +1,6 @@
 # パスジェネくん
-
-
-
 ## URL
-
-`https://pass-gene-kun.pages.dev/`
+https://pass-gene-kun.pages.dev/
 
 ## 概要
 
