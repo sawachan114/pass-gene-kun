@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パスジェネくん</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="password-display-wrapper">
+            <input id="password-display" type="text" readonly value="生成中...">
+            <button id="regenerate-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 2v6h-6"></path>
+                    <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+                    <path d="M3 22v-6h6"></path>
+                    <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- The feedback div is now completely removed -->
+        <button id="copy-btn" class="action-button">コピー</button>
+    </div>
+
+    <div class="card">
+        <div class="setting-section">
+            <label class="setting-label">桁数</label>
+            <div class="length-controls">
+                <button id="length-minus" class="length-counter-btn">-</button>
+                <span id="length-display">16</span>
+                <button id="length-plus" class="length-counter-btn">+</button>
+            </div>
+            <input type="range" id="length-slider" min="8" max="32" value="16">
+        </div>
+
+        <div class="setting-section">
+            <div class="toggle-group-wrapper">
+                <div class="toggle-group">
+                    <input type="radio" name="uppercase" id="uc-0" value="0"><label for="uc-0">大文字 無し</label>
+                    <input type="radio" name="uppercase" id="uc-1" value="1"><label for="uc-1">含めても良い</label>
+                    <input type="radio" name="uppercase" id="uc-2" value="2" checked><label for="uc-2">必ず含める</label>
+                </div>
+            </div>
+            <div class="toggle-group-wrapper">
+                <div class="toggle-group">
+                    <input type="radio" name="lowercase" id="lc-0" value="0"><label for="lc-0">小文字 無し</label>
+                    <input type="radio" name="lowercase" id="lc-1" value="1"><label for="lc-1">含めても良い</label>
+                    <input type="radio" name="lowercase" id="lc-2" value="2" checked><label for="lc-2">必ず含める</label>
+                </div>
+            </div>
+            <div class="toggle-group-wrapper">
+                <div class="toggle-group">
+                    <input type="radio" name="numbers" id="num-0" value="0"><label for="num-0">数字 無し</label>
+                    <input type="radio" name="numbers" id="num-1" value="1"><label for="num-1">含めても良い</label>
+                    <input type="radio" name="numbers" id="num-2" value="2" checked><label for="num-2">必ず含める</label>
+                </div>
+            </div>
+            <div class="toggle-group-wrapper">
+                <div class="toggle-group">
+                    <input type="radio" name="symbols" id="sym-0" value="0" checked><label for="sym-0">記号 OFF</label>
+                    <input type="radio" name="symbols" id="sym-1" value="1"><label for="sym-1">含めても良い</label>
+                    <input type="radio" name="symbols" id="sym-2" value="2"><label for="sym-2">必ず含める</label>
+                </div>
+            </div>
+        </div>
+        
+        <div id="symbol-options" class="setting-section hidden">
+            <label class="setting-label">使用する記号</label>
+            <div id="symbol-checkboxes">
+                <!-- JSで動的に生成 -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="popup.js" defer></script>
+</body>
+</html>
